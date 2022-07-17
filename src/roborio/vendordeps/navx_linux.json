@@ -1,0 +1,32 @@
+{
+    "name": "navx-linux",
+    "version": "0.0.1",
+    "uuid": "1b88a143-8613-46ce-966b-6b9ca5fd0da9",
+    "mavenUrls": [
+        ""
+    ],
+    "jsonUrl": "undefined",
+    "fileName": "robotlib.json",
+    "javaDependencies": [
+        {
+            "groupId": "com.1189.frc",
+            "artifactId": "navx-linux-cpp",
+            "version": "0.0.1"
+        }
+    ],
+    "jniDependencies": [],
+    "cppDependencies": [
+        {
+            "groupId": "com.1189.frc",
+            "artifactId": "navx-linux-cpp",
+            "version": "0.0.1",
+            "libName": "Vendor",
+            "headerClassifier": "headers",
+            "sharedLibrary": true,
+            "skipInvalidPlatforms": true,
+            "binaryPlatforms": [
+                "linuxx86-64"
+            ]
+        }
+    ]
+}
