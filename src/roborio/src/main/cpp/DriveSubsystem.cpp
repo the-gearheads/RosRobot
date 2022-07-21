@@ -29,7 +29,7 @@ DriveSubsystem::DriveSubsystem() {
 void DriveSubsystem::setSpeeds(DifferentialDriveWheelSpeeds speeds) {
   units::volt_t lVolts = lFeedforward.Calculate(speeds.left);
   units::volt_t rVolts = rFeedforward.Calculate(speeds.right);
-  printf("%f, %f :%f. %f\n", speeds.left, speeds.right, lVolts, rVolts);
+  printf("%f, %f :%f. %f\n", speeds.left.value(), speeds.right.value(), lVolts.value(), rVolts.value());
   lfMotor.SetVoltage(lVolts);
   rfMotor.SetVoltage(rVolts);
 }
