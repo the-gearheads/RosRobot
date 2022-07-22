@@ -4,9 +4,6 @@
 
 #pragma once
 
-// ROS2 Galactic has some GLIBC deprecation errors, let's suppress those (or at least some of them)
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-
 #include <atomic>
 #include "rclcpp/rclcpp.hpp"
 #include "DriveNode.h"
