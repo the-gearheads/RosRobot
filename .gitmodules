@@ -1,7 +1,3 @@
-[submodule "bond_core"]
-	path = bond_core
-	url = https://github.com/ros/bond_core.git
-	branch = galactic
 [submodule "src/external/BehaviorTree.CPP"]
 	path = src/external/BehaviorTree.CPP
 	url = https://github.com/BehaviorTree/BehaviorTree.CPP.git
