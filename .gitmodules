@@ -1,0 +1,30 @@
+[submodule "bond_core"]
+	path = bond_core
+	url = https://github.com/ros/bond_core.git
+	branch = galactic
+[submodule "src/external/BehaviorTree.CPP"]
+	path = src/external/BehaviorTree.CPP
+	url = https://github.com/BehaviorTree/BehaviorTree.CPP.git
+[submodule "src/external/angles"]
+	path = src/external/angles
+	url = https://github.com/ros/angles.git
+	branch = galactic-devel
+[submodule "src/external/bond_core"]
+	path = src/external/bond_core
+	url = https://github.com/ros/bond_core.git
+	branch = galactic
+[submodule "src/external/ompl"]
+	path = src/external/ompl
+	url = https://github.com/ompl/ompl.git
+[submodule "src/external/vision_opencv"]
+	path = src/external/vision_opencv
+	url = https://github.com/ros-perception/vision_opencv.git
+	branch = ros2
+[submodule "src/external/common_interfaces"]
+	path = src/external/common_interfaces
+	url = https://github.com/the-gearheads/common_interfaces/
+	branch = galactic
+[submodule "src/external/navigation2"]
+	path = src/external/navigation2
+	url = https://github.com/ros-planning/navigation2.git
+	branch = galactic
