@@ -34,6 +34,26 @@ void DriveSubsystem::setSpeeds(DifferentialDriveWheelSpeeds speeds) {
   rfMotor.SetVoltage(rVolts);
 }
 
+units::meter_t DriveSubsystem::getLPos() {
+  return nativeToMeters(lfMotor.GetSelectedSensorPosition());
+}
+
+units::meter_t DriveSubsystem::getRPos() {
+  return nativeToMeters(rfMotor.GetSelectedSensorPosition());
+}
+
+units::meters_per_second_t DriveSubsystem::getLVel() {
+  return nativeVelocityToMeters(lfMotor.GetSelectedSensorVelocity());
+}
+
+units::meters_per_second_t DriveSubsystem::getRVel() {
+  return nativeVelocityToMeters(rfMotor.GetSelectedSensorVelocity());
+}
+
+ChassisSpeeds DriveSubsystem::getSpeeds() {
+  return kinematics.ToChassisSpeeds(DifferentialDriveWheelSpeeds{getLVel(), getRVel()});
+}
+
 void DriveSubsystem::drive(double xSpeed, double rot) {
   setSpeeds(kinematics.ToWheelSpeeds(ChassisSpeeds{units::meters_per_second_t{xSpeed},
                                      0_mps, units::radians_per_second_t{rot}}));
@@ -52,8 +72,8 @@ void DriveSubsystem::zeroEncoders() {
 void DriveSubsystem::periodic() {
   if(Robot::IsSimulation())
     simPeriodic();
-  auto lPos = nativeToMeters(lfMotor.GetSelectedSensorPosition());
-  auto rPos = nativeToMeters(rfMotor.GetSelectedSensorPosition());
+  auto lPos = getLPos();
+  auto rPos = getRPos();
   SmartDashboard::PutNumber("Left Encoder", lPos.value());
   SmartDashboard::PutNumber("Right Encoder", rPos.value());
   auto pose = odometry.Update(gyro.GetRotation2d(), lPos, rPos);
@@ -116,6 +136,6 @@ units::meter_t DriveSubsystem::nativeToMeters(double nativeUnits) {
 }
 
 /* Converts native velocity units to m/s */
-units::meter_t DriveSubsystem::nativeVelocityToMeters(double velocity) {
-  return nativeToMeters(velocity) * 10; // converts m/100ms to m/s
+units::meters_per_second_t DriveSubsystem::nativeVelocityToMeters(double velocity) {
+  return units::meters_per_second_t{nativeToMeters(velocity).value() * 10}; // converts m/100ms to m/s
 }

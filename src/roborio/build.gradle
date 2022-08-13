@@ -55,7 +55,7 @@ nativeUtils.platformConfigs.named("windowsx86-64").configure {
 }
 
 nativeUtils.platformConfigs.named("linuxx86-64").configure {
-    it.cppCompiler.args.add('-Wnodeprecated-declarations')
+    it.cppCompiler.args.add('-Wno-deprecated-declarations')
 }
 
 model {

@@ -19,6 +19,7 @@ class DriveSubsystem {
 public:
   DriveSubsystem();
   void drive(double xSpeed, double rot);
+  ChassisSpeeds getSpeeds();
   void zeroEncoders();
   void periodic();
 
@@ -26,10 +27,19 @@ public:
 
 private:
   void setSpeeds(DifferentialDriveWheelSpeeds speeds);
+
+  units::meter_t getLPos();
+  units::meter_t getRPos();
+
+  units::meters_per_second_t getLVel();
+  units::meters_per_second_t getRVel();
+
   int metersToNative(units::meter_t position);
   int velocityToNative(units::meters_per_second_t velocity);
+
   units::meter_t nativeToMeters(double nativeUnits);
-  units::meter_t nativeVelocityToMeters(double velocity);
+  units::meters_per_second_t nativeVelocityToMeters(double velocity);
+
   void simPeriodic();
 
   WPI_TalonFX lfMotor{ LF_MOTOR_ID };
