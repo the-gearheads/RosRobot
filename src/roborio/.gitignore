@@ -5,6 +5,9 @@
 # Prerequisites
 *.d
 
+simgui-ds.json
+simgui.json
+
 # Compiled Object files
 *.slo
 *.lo

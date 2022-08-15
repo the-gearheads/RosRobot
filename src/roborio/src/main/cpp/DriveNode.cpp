@@ -29,10 +29,7 @@ namespace ros {
     geometry_msgs::msg::TransformStamped t;
     t.header.stamp = this->get_clock()->now();
     t.header.frame_id = "world";
-    
-    // Ideally we should name this odom and publish a separate odom->base_link transform
-    // but we don't have anything that would publish that for now so it seems pointless
-    t.child_frame_id = "base_link";
+    t.child_frame_id = "odom";
 
     frc::Pose2d pose = drive.odometry.GetPose();
 
@@ -52,7 +49,7 @@ namespace ros {
     // Publish odometry
     nav_msgs::msg::Odometry odom;
     odom.header.frame_id = "world";
-    odom.child_frame_id = "base_link";
+    odom.child_frame_id = "odom";
 
     odom.pose.pose.position.x = pose.X().value();
     odom.pose.pose.position.y = pose.Y().value();

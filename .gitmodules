@@ -24,3 +24,15 @@
 	path = src/external/navigation2
 	url = https://github.com/ros-planning/navigation2.git
 	branch = galactic
+[submodule "src/external/joint_state_publisher"]
+	path = src/external/joint_state_publisher
+	url = https://github.com/ros/joint_state_publisher.git
+	branch = galactic
+[submodule "src/external/xacro"]
+	path = src/external/xacro
+	url = https://github.com/ros/xacro.git
+	branch = ros2
+[submodule "src/external/gazebo_ros_pkgs"]
+	path = src/external/gazebo_ros_pkgs
+	url = https://github.com/ros-simulation/gazebo_ros_pkgs.git
+	branch = galactic

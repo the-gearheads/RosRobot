@@ -57,8 +57,7 @@ private:
 
   sim::DifferentialDrivetrainSim sim {
     LinearSystemId::IdentifyDrivetrainSystem(SIM_LINEAR_KV, SIM_LINEAR_KA, SIM_ANGULAR_KV, SIM_ANGULAR_KA),
-    TRACK_WIDTH, DCMotor::Falcon500(2), SHAFT_TO_WHEEL_GEAR_RATIO, WHEEL_RADIUS,
-    {0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005}
+    TRACK_WIDTH, DCMotor::Falcon500(2), SHAFT_TO_WHEEL_GEAR_RATIO, WHEEL_RADIUS
   };
 
 
